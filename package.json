@@ -4,20 +4,30 @@
   "description": "A CSS Grid Framework.",
   "main": "dist/main.css",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "node-sass --include-path scss scss/main.scss dist/main.css --output-style compressed",
-    "watch": "nodemon -e scss -x \"yarn build\""
+    "build:dev": "webpack",
+    "build:production": "cross-env NODE_ENV=production webpack",
+    "watch": "webpack --watch"
   },
   "repository": "https://github.com/daveberning/griddle",
-  "author": "",
+  "author": "Dave Berning",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/parsecdigital/griddle/issues"
   },
   "homepage": "https://github.com/parsecdigital/griddle#readme",
-  "dependencies": {
-    "node-sass": "^4.11.0",
-    "nodemon": "^1.18.9"
+  "devDependencies": {
+    "autoprefixer": "^9.7.4",
+    "cross-env": "^7.0.0",
+    "css-loader": "^3.4.2",
+    "extract-loader": "^3.1.0",
+    "file-loader": "^5.0.2",
+    "node-sass": "^4.13.1",
+    "nodemon": "^1.18.9",
+    "postcss": "^7.0.26",
+    "postcss-loader": "^3.0.0",
+    "sass-loader": "^8.0.2",
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10"
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"

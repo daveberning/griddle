@@ -1,4 +1,5 @@
-@import 'scss/variables/breakpoints';
+@import './../variables/breakpoints';
+
 $directions: "top" "right" "bottom" "left";
 $sizes: "" "-md" "-lg";
 $properties: "left" "right" "center" "start" "normal";
@@ -6,6 +7,12 @@ $maximum: 12;
 
 @function get_first_chars($word, $number) {
   @return str-slice($word, 0, $number);
+}
+
+@mixin default_grid_flow {
+  -ms-grid-rows: auto;
+  grid-template-rows: auto;
+  grid-template-columns: repeat(#{$maximum}, 1fr); // 12 Column Grid By Default
 }
 
 /* Class Generation
@@ -114,14 +121,26 @@ $maximum: 12;
     grid-column: span #{$maximum};
   }
   
-  &.is-dense { grid-auto-flow: dense }
+  &.is-dense {
+    grid-auto-flow: dense;
+    @include default_grid_flow;
+  }
   &.has-wrapped-row {
     grid-auto-flow: row;
-    &.is-dense { grid-auto-flow: row dense }
+    @include default_grid_flow;
+    
+    &.is-dense {
+      grid-auto-flow: row dense;
+      @include default_grid_flow;
+    }
   }
   &.has-wrapped-col {
     grid-auto-flow: column;
-    &.is-dense { grid-auto-flow: column dense }
+    
+    &.is-dense {
+      grid-auto-flow: column dense;
+      @include default_grid_flow;
+    }
   }
 }
 
