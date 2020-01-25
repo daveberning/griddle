@@ -1,0 +1,37 @@
+@mixin generate_align_self_classes {
+  $align_types: "stretch" "start" "end" "center";
+  
+  @each $type in $align_types {
+    .is-aligned-#{$type} { align-self: #{$type}; }
+    .is-flex { display: flex; }
+    .is-flex-inline { display: inline-flex; }
+  
+    .is-stretched {
+      align-self: stretch;
+      justify-self: stretch;
+    }
+    
+    @for $i from 1 through length($breakpoints) {
+      .is-aligned-#{$type}-#{nth($breakpoints, $i)} {
+        @media screen and (min-width: #{nth($breakpoint_values, $i)}) { align-self: #{$type}; }
+      }
+  
+      .is-flex-#{nth($breakpoints, $i)} {
+        @media screen and (min-width: #{nth($breakpoint_values, $i)}) { display: flex; }
+      }
+      
+      .is-flex-inline-#{nth($breakpoints, $i)} {
+        @media screen and (min-width: #{nth($breakpoint_values, $i)}) { display: inline-flex; }
+      }
+  
+      .is-stretched-#{nth($breakpoints, $i)} {
+        @media screen and (min-width: #{nth($breakpoint_values, $i)}) {
+          align-self: stretch;
+          justify-self: stretch;
+        }
+      }
+    }
+  }
+}
+
+@include generate_align_self_classes;

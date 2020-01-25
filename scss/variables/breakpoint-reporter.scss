@@ -1,0 +1,32 @@
+@import 'breakpoints';
+
+@mixin generate_breakpoint_reporter {
+  body.has-breakpoint-tag:after {
+      content: 'XS';
+      font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
+      font-size: 14px;
+      font-weight: normal;
+      position: fixed;
+      top: 165px;
+      right: 0;
+      padding: 7px 10px;
+      background-color: #EB8A5E;
+      color: #fff;
+      z-index: 9999;
+      border-radius: 5px 0 0 5px;
+      text-align: center;
+      margin: 0 auto;
+  
+      @for $i from 1 through length($breakpoints) {
+        @media (min-width: #{nth($breakpoint_values, $i)}) {
+          & {
+            content: '#{nth($breakpoints, $i)}';
+            background-color: #EB8A5E;
+            text-transform: uppercase;
+          }
+        }
+      }
+    }
+}
+
+@include generate_breakpoint_reporter;

@@ -1,0 +1,25 @@
+{
+  "name": "@daveberning/griddle",
+  "version": "0.1.0",
+  "description": "A CSS Grid Framework.",
+  "main": "dist/main.css",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "node-sass --include-path scss scss/main.scss dist/main.css --output-style compressed",
+    "watch": "nodemon -e scss -x \"yarn build\""
+  },
+  "repository": "https://github.com/daveberning/griddle",
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/parsecdigital/griddle/issues"
+  },
+  "homepage": "https://github.com/parsecdigital/griddle#readme",
+  "dependencies": {
+    "node-sass": "^4.11.0",
+    "nodemon": "^1.18.9"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  }
+}

@@ -1,0 +1,37 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Griddle CSS</title>
+  <meta name="description" content="The HTML5 Herald">
+  <meta name="author" content="SitePoint">
+
+  <link href="https://fonts.googleapis.com/css?family=Khula&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="dist/main.css">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+
+<body class="has-breakpoint-tag has-p-lg">
+  <div id="app">
+    <div class="is-grid">
+      <div class="is-box has-primary-bkg has-shadow has-text-white">
+        <h1 class="is-bold">Something</h1>
+      </div>
+      <div class="is-col-6 is-col-1-lg is-box has-primary-bkg has-shadow has-text-white">
+        <h1 class="is-bold">Foobar</h1>
+      </div>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+    new Vue({
+      el: '#app',
+      data: {
+        colors: [ 'primary', 'secondary', 'tertiary', 'cta' ]
+      }
+    })
+  </script>
+</body>
+</html>

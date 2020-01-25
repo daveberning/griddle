@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:500,700,900&display=swap');
+
+/* General
+----------------------------- */
+html {
+  font-size: 16px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body {
+  line-height: 2rem;
+  background: #f4f4f4;
+}
+
+* {
+  color: darken($primary, 12%);
+  box-sizing: border-box;
+}
+
+p { margin-bottom: 1.5rem; }

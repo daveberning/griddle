@@ -1,0 +1,36 @@
+@mixin generate_text_color_classes {
+  @for $i from 1 through length($all_colors) {
+    .has-text-#{nth($all_colors, $i)},
+    .is-text-#{nth($all_colors, $i)} {
+      color: nth($all_color_hex, $i);
+    }
+  }
+}
+
+@mixin generate_headings {
+  $size: 4;
+  @for $i from 1 through 6 {
+    h#{$i},
+    .is-h#{$i} {
+      font-size: #{$size}rem;
+      line-height: #{$size + .5}rem;
+      font-weight: 700;
+    }
+    $size: $size - .5;
+  }
+}
+
+@include generate_text_color_classes;
+
+/* Headings
+----------------------------- */
+@include generate_headings; // h<x> or .is-h<x>
+
+.is-bold           { font-weight: bold; }
+.is-strike         { text-decoration: line-through }
+.is-italic         { font-style: italic; }
+.is-capitalized    { text-transform: capitalize; }
+.is-uppercase      { text-transform: uppercase; }
+.is-aligned-left   { text-align: left; }
+.is-aligned-center { text-align: center; }
+.is-aligned-right  { text-align: right; }
