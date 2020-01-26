@@ -1,0 +1,11 @@
+$xs: '575.5px';
+$sm: '576px';
+$md: '768px';
+$lg: '992px';
+$xl: '1200px';
+
+/* Note:
+** These must be in the same order
+----------------------------------------- */
+$breakpoints:      "xs" "sm" "md" "lg" "xl";
+$breakpoint_values: $xs  $sm  $md  $lg  $xl;

@@ -1,0 +1,37 @@
+@mixin generate_buttons {
+  @for $i from 1 through length($all_colors) {
+    button,
+    a.is-button {
+      border: none;
+      padding: 1rem 2rem;
+      font-size: 1rem;
+      
+      &.has-rounded-corners { border-radius: 10rem; }
+  
+      &.is-#{nth($all_colors, $i)} {
+        background: nth($all_color_hex, $i);
+        color: $white;
+    
+        &.is-outline {
+          background: transparent;
+          border: 1px solid nth($all_color_hex, $i);
+          color: nth($all_color_hex, $i);
+        }
+  
+        &.is-link {
+          background: none;
+          color: nth($all_color_hex, $i);
+          text-decoration: underline;
+        }
+      }
+      
+      &.is-small { padding: .5rem 2rem; }
+      &.is-large {
+        padding: 1.5rem 2rem;
+        font-size: 1.25rem;
+      }
+    }
+  }
+}
+
+@include generate_buttons;

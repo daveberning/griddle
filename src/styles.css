@@ -1,0 +1,23 @@
+/* This is used for the demo only. This is not the source code
+----------------------------------------------------------------------- */
+.is-grid {
+  padding: 1rem;
+  border: 2px solid #000;
+}
+
+.swatches {
+  border: none;
+}
+
+.swatches p {
+  color: white;
+}
+
+.item {
+  background: #ccc;
+}
+
+.item .item {
+  background: #252525;
+  color: #fff;
+}

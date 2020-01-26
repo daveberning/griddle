@@ -1,0 +1,39 @@
+@mixin generate_tables {
+  @for $i from 1 through length($all_colors) {
+    .is-table.is-#{nth($all_colors, $i)} {
+      color: nth($all_color_hex, $i);
+      
+      td,
+      th {
+        padding: .75rem 1rem;
+        border: 1px solid nth($all_color_hex, $i);
+      }
+  
+      th {
+        background: nth($all_color_hex, $i);
+        color: $white;
+        border-left: 1px solid $white;
+        border-right: 1px solid $white;
+      }
+      
+      tr th:first-child { border-left: none; }
+      tr th:last-child { border-right: none; }
+    }
+  }
+}
+
+.is-table {
+  border: 1px solid $grey;
+  
+  td,
+  th {
+    padding: .75rem 1rem;
+    border: 1px solid $grey;
+  }
+  
+  th {
+    background: $grey;
+  }
+}
+
+@include generate_tables;

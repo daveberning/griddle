@@ -1,0 +1,24 @@
+@mixin generate_alerts {
+  @for $i from 1 through length($all_colors) {
+    .is-alert {
+      padding: 1rem;
+    
+      &.is-#{nth($all_colors, $i)} {
+        background: nth($all_color_hex, $i);
+        color: $white;
+      
+        &.is-outline {
+          background: none;
+          border: 2px solid nth($all_color_hex, $i);
+          color: nth($all_color_hex, $i);
+        }
+      }
+    }
+    
+    .is-alert.is-rounded {
+      border-radius: 10rem;
+    }
+  }
+}
+
+@include generate_alerts;

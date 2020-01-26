@@ -1,0 +1,32 @@
+{
+  "name": "@daveberning/griddle",
+  "version": "0.1.0",
+  "description": "A CSS Grid Framework.",
+  "main": "dist/main.css",
+  "scripts": {
+    "build:dev": "webpack",
+    "build:production": "cross-env NODE_ENV=production webpack",
+    "watch": "webpack --watch"
+  },
+  "repository": "https://github.com/daveberning/griddle",
+  "author": "Dave Berning",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/daveberning/griddle/issues"
+  },
+  "homepage": "https://github.com/daveberning/griddle#readme",
+  "devDependencies": {
+    "autoprefixer": "^9.7.4",
+    "cross-env": "^7.0.0",
+    "css-loader": "^3.4.2",
+    "extract-loader": "^3.1.0",
+    "file-loader": "^5.0.2",
+    "node-sass": "^4.13.1",
+    "nodemon": "^1.18.9",
+    "postcss": "^7.0.26",
+    "postcss-loader": "^3.0.0",
+    "sass-loader": "^8.0.2",
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10"
+  }
+}
