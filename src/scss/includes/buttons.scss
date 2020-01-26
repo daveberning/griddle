@@ -9,23 +9,26 @@
       &.has-rounded-corners { border-radius: 10rem; }
   
       &.is-#{nth($all_colors, $i)} {
-        background: nth($all_color_hex, $i);
-        color: $white;
+        background: color(#{nth($all_colors, $i)});
+        color: color("white");
     
         &.is-outline {
           background: transparent;
-          border: 1px solid nth($all_color_hex, $i);
-          color: nth($all_color_hex, $i);
+          border: 1px solid color(#{nth($all_colors, $i)});
+          color: color(#{nth($all_colors, $i)});
         }
   
         &.is-link {
           background: none;
-          color: nth($all_color_hex, $i);
+          color: color(#{nth($all_colors, $i)});
           text-decoration: underline;
         }
       }
       
-      &.is-small { padding: .5rem 2rem; }
+      &.is-small {
+        padding: .5rem 2rem;
+      }
+      
       &.is-large {
         padding: 1.5rem 2rem;
         font-size: 1.25rem;

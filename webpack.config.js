@@ -6,6 +6,10 @@ module.exports = {
     './src/scss/includes/grid.scss',
     './src/scss/main.scss'
   ],
+  output: {
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'editor.blocks.js',
+  },
   module: {
     rules: [
       {

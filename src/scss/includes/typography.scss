@@ -2,7 +2,7 @@
   @for $i from 1 through length($all_colors) {
     .has-text-#{nth($all_colors, $i)},
     .is-text-#{nth($all_colors, $i)} {
-      color: nth($all_color_hex, $i);
+      color: color(#{nth($all_colors, $i)});
     }
   }
 }

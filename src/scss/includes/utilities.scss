@@ -96,14 +96,18 @@ img {
 @mixin generate-border-radius {
   $radius: .25;
   @each $size in $sizes {
-    .has-rounded-corners#{$size} { border-radius: #{$radius}rem !important; }
+    .has-rounded-corners#{$size} {
+      border-radius: #{$radius}rem !important;
+    }
     $radius: $radius + .25;
   }
 }
 
 @mixin generate_background_colors {
   @for $i from 1 through length($all_colors) {
-    .has-bkg-#{nth($all_colors, $i)} { background: nth($all_color_hex, $i); }
+    .has-bkg-#{nth($all_colors, $i)} {
+      background: color(#{nth($all_colors, $i)});
+    }
   }
 }
 
@@ -124,7 +128,7 @@ img {
 .is-box {
   padding: 1.5rem;
   border-radius: 2px;
-  border: 2px solid $grey;
+  border: 2px solid color("grey");
   
   &.has-shadow {
     border: none;

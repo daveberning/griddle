@@ -1,25 +1,25 @@
-/* Theme
+/* Need for Loops
 ----------------------------------------- */
-$primary: #016575;
-$secondary: #03414b;
-$tertiary: #003242;
-$cta: #EB8A5E;
+$all_colors: "primary" "secondary" "tertiary" "cta" "white" "black" "grey" "danger" "warning" "info" "success";
 
-/* Whites, Blacks, Greys
+/* CSS Variables
 ----------------------------------------- */
-$white: #fff;
-$black: #000;
-$grey: #ececec;
+:root {
+  --primary: #016575;
+  --secondary: #03414b;
+  --tertiary: #003242;
+  --cta: #EB8A5E;
+  --white: #ffffff;
+  --black: #000000;
+  --grey: #ececec;
+  --success: #48C774;
+  --warning: #FFDD57;
+  --danger: #F14668;
+  --info: #3298DC;
+}
 
-/* Notifications
------------------------------------------ */
-$danger: #F14668;
-$warning: #FFDD57;
-$info: #3298DC;
-$success: #48C774;
-
-/* Note:
-** These must be in the same order
------------------------------------------ */
-$all_colors:   "primary" "secondary" "tertiary" "cta" "white" "black" "grey" "danger" "warning" "info" "success";
-$all_color_hex: $primary  $secondary  $tertiary  $cta  $white  $black  $grey  $danger  $warning  $info  $success;
+/* Used to generate CSS Variables in SCSS
+------------------------------------------------- */
+@function color($color-name) {
+  @return var(--#{$color-name});
+}

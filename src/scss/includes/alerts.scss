@@ -4,13 +4,13 @@
       padding: 1rem;
     
       &.is-#{nth($all_colors, $i)} {
-        background: nth($all_color_hex, $i);
-        color: $white;
+        background: color(#{nth($all_colors, $i)});
+        color: color("white");
       
         &.is-outline {
           background: none;
-          border: 2px solid nth($all_color_hex, $i);
-          color: nth($all_color_hex, $i);
+          border: 2px solid color(#{nth($all_colors, $i)});
+          color: color(#{nth($all_colors, $i)});
         }
       }
     }
