@@ -190,6 +190,26 @@ Or remove them entirely.
 ...
 </div>
 ```
+# Configuration
+Griddle is built with CSS variables which means that you can easily configure Griddle whether or not you are using SCSS.
+
+To configure colors add the follow to the top of your projects CSS file.
+
+```css
+:root {
+  --primary: #016575;
+  --secondary: #03414b;
+  --tertiary: #003242;
+  --cta: #EB8A5E;
+  --white: #ffffff;
+  --black: #000000;
+  --grey: #ececec;
+  --success: #48C774;
+  --warning: #FFDD57;
+  --danger: #F14668;
+  --info: #3298DC;
+}
+```
 
 # Documentation
 
