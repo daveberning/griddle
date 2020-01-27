@@ -31,8 +31,8 @@ $maximum: 12;
 }
 
 @mixin grid_item_spans($grid_direction) {
-  @for $i from 1 through 12 {
-    @for $b from 1 through length($breakpoints) {
+  @for $b from 1 through length($breakpoints) {
+    @for $i from 1 through 12 {
       @include grid_item_breakpoint_spans(#{nth($breakpoints, $b)}, #{nth($breakpoint_values, $b)}, $i, $grid_direction);
     }
   }
@@ -43,12 +43,18 @@ $maximum: 12;
   @for $i from 1 through $maximum {
     .has-#{get_first_chars($grid_direction, 3)}-#{$i} {
       grid-template-#{$grid_direction}: repeat($i, 1fr);
-      & > * { grid-column: span #{$i}; } // Items without a .is-col class are 12 by default
+      & > * { // Items without a .is-col class are 12 by default
+        grid-column: span #{$i};
+        @media screen and (min-width: $md) { grid-column: span 1; }
+      }
     }
     
     @for $b from 1 through length($breakpoints) {
       .has-#{get_first_chars($grid_direction, 3)}-#{$i}-#{nth($breakpoints, $b)} {
-        & > * { grid-column: span #{$i}; } // Items without a .is-col class are 12 by default
+        & > * { // Items without a .is-col class are 12 by default
+          grid-column: span #{$i};
+          @media screen and (min-width: $lg) { grid-column: span 1; }
+        }
         
         @media screen and (min-width: #{nth($breakpoint_values, $b)}) {
           grid-template-#{$grid_direction}: repeat($i, 1fr) !important;
