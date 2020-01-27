@@ -24,12 +24,9 @@ you are familiar with how other CSS Frameworks work. At it's core, is CSS Grid. 
 # Overview
 
 ## Columns
-With Griddle, you can create standard to complex grid layouts with just a few classes. All of Griddle's classes are
- prefixed with `.is-` or `.has-`. This is done for two reaosns. 1. For it to read like English and 2. for you to
-  differentiate your classes and Griddle's.
+With Griddle, you can create standard to complex grid layouts with just a few classes. All of Griddle's classes are prefixed with `.is-` or `.has-`. This is done for two reaosns. 1. For it to read like English and 2. for you to differentiate your classes and Griddle's.
   
-  At a high level, Griddle consists of a grid, column, and rows. To create a grid, just add the `is-grid` class to
-   any element.
+At a high level, Griddle consists of a grid, column, and rows. To create a grid, just add the `is-grid` class to any HTML node.
    
 ```html
 <div class="is-grid">
@@ -37,67 +34,67 @@ With Griddle, you can create standard to complex grid layouts with just a few cl
 </div>
 ```
 
-By default, Griddle will activate with a standard twelve (12) column grid with auto rows. You do not need to add any
- additional classes to define a column. It is important to note that any element following the `is-grid` wrapper will
-  become a grid column. All columns span twelve (12) unless stated otherwise.
+By default, Griddle will activate with a standard twelve (12) column grid with auto rows. You do not need to add any additional classes to define a column.
+
+It is important to note that any element following the `is-grid` wrapper will become a grid column. *All columns stack on the xs and sm breakpoints.* Starting at the **md** breakpoint, the column will span the number of grid columns specified by the class that is used.
   
-  Let's create a column. All column classes follow this same structure.
+Let's create a column. All column classes follow this same structure.
   
   > is-col-{number}-{breakpoint}
 
-There are a total of twelve (12) column classes across five (5) breakpints:`xs`, `sm`, `md`, `lg`, and `xl`.
-  
-  ```html
-  <div class="is-grid">
-    <div class="is-col-1">Columnm</div>
-  </div>
-  ```
- 
- Griddle is built wtth a mobile first approach. Meaning that the classes will apply to all breakpoints until
-  specified at a different point.
-  
-  The above code will render a column that spans one (1) column across the five (5) breakpoints.
-  
-  We can overwrite this to make it six (6) columns at the `md` breakpoint: 
+There are a total of twelve (12) column classes across five (5) breakpoints: `xs`, `sm`, `md`, `lg`, and `xl`.
   
 ```html
 <div class="is-grid">
-  <div class="is-col-1 is-col-6-md">Columnm</div>
+  <div class="is-col-1">Column</div>
+</div>
+```
+ 
+Griddle is built with a mobile first approach. Meaning that the classes will apply to all breakpoints until specified at a different point.
+  
+For example: The above code will render a column that spans one (1) column across the five (5) breakpoints.
+  
+We can overwrite this to have it span six (6) columns at the `md` breakpoint: 
+  
+```html
+<div class="is-grid">
+  <div class="is-col-1 is-col-6-md">Column</div>
 </div>
 ```
 
-IF you have columns that span more than twelve (12), then the column will wrap to the row below it.
+If you have columns that span more than twelve (12), then the column will wrap to the row *below* it.
 
-## Grids With Custom Column Amounts
+## Custom Column Lengths
 
-In Griddle, you can create custom grids. Or grids that have a specific number of columns besides the standard twelve
- (12).
+In Griddle, you can create grids that do not adhear to the standard twelve (12) column grid. You can easily create grids that have anywhere from one (1) to twelve (12) columns. If you want a grid that has an odd number of columns, like a seven (7) column grid, no problem. This gives you a different level of control over your grids.
  
- To change the grid's column length, just has the class: `has-col-{number}`.
+To change the grid's column length, just has the class: `has-col-{number}-{breakpoint}`.
  
- These classes work exactly like the `is-col` classes in that there are up to twelve (12) across the five (5) breakpoints.
+These classes work *exactly* like the `is-col` classes; there are up to twelve (12) classes across the five (5) different breakpoints.
  
  ```html
  <div class="is-grid has-col-2"><!-- note here -->
-   <div class="is-col-1">Columnm One</div>
-   <div class="is-col-1">Columnm Two</div>
+   <div class="is-col-1">Column One</div>
+   <div class="is-col-1">Column Two</div>
  </div>
 ```
 
-The grid above now has two (2) columns instead of the standard amount. Now, each column will span 50% of the grid's
- width. This would be equivalent to `is-col-6` in the standard grid. 
+The grid above now has two (2) columns instead of the default amount. Now, each column will span 50% of the grid's width. This would be equivalent to `is-col-6` if you kept the standard grid length. 
  
  You can of course change the number of columns that a grid has at each breakpoint.
  
-  ```html
-  <div class="is-grid has-col-2 has-col-4-lg">
-    ...
-  </div>
- ```
+```html
+<div class="is-grid has-col-2 has-col-4-lg">
+  ...
+</div>
+```
+
+The grid above will have two (2) columns at the xs, sm, and md breakpoints. But will change to have four (4) columns while the window is sized to the lg and xl breakpoints.
 
 ### Column Gaps
-Each grid with the `is-grid` class will automatically apply add grid column and row gaps. You can change the size of
- these gaps to a larger size if you wish.
+By default, each grid will come with column and row gaps already defined. So you do not have to keep adding extra classes to achieve very similar or standard looking grids.
+
+You can change the size of these gaps to a larger size if you wish. There are a total of two (2) additonal gap sizes: md and lg.
  
  ```html
 <div class="is-grid has-col-gap-lg">
@@ -105,13 +102,87 @@ Each grid with the `is-grid` class will automatically apply add grid column and 
 </div>
 ```
 
-Or remove them entirely.
+Grid gap values:
+- Standard: `1rem`
+- Medium (md): `1.5rem`
+- Large (lg): `2rem`
+
+Or you can remove them entirely:
 
  ```html
 <div class="is-grid has-no-col-gap">
 ...
 </div>
 ```
+
+## Grid Direction
+
+You can change the direction of the grid. The standard direction of any `is-grid` is of course left-to-right `ltr`. This is the default direction of a grid in the CSS Grid spec itself.
+
+To change the direction of the grid to right-to-left (rtl) just add the following class to your grid.
+
+```html
+<div class="is-grid is-rtl">
+  ...
+</div>
+```
+
+As with everything related to the grid, you can change the direction of the grid at any of the specified breakpoints.
+
+```html
+<div class="is-grid is-rtl-lg">
+  ...
+</div>
+```
+
+In this case, the grid will flow in the left-to-right (ltr) direction for the xs, sm, and md breakpoints. However, the direction will change to right-to-left (rtl) at the lg breakpoint.
+
+## Grid Item Placement
+
+Griddle comes with a few placement classes that you can add to your grid items.
+
+```html
+<div class="is-grid">
+  <div class="is-placed-right">
+  </div>
+</div>
+```
+
+This will essentially adds the `place-self: right;` property and value to the grid item. In CSS, the `place-self` property is shorthand for `justify-self` and `align-self`.
+
+There are a total of five (5) `is-placed` classes:
+
+1. `is-placed-left`
+2. `is-placed-right`
+3. `is-placed-center`
+4. `is-placed-start`
+5. `is-placed-normal`
+
+## Grid Item Order
+
+With Griddle, you can also re-order grid items as you see fit. Browsers will read your HTML document from top to bottom, left to right. So whichever grid item comes first in your DOM, the browser will render that at the top left. However, there may be some instances where you want the second grid item in your DOM to be the fourth item or the second. In this class, you use the `is-order` class.
+
+```html
+<div class="is-grid">
+  <div class="is-order-2">
+    Column
+  </div>
+</div>
+```
+There a lot of twelve (12) order classes across the five (5) different breakpoints. The structure of the `is-order` class is similar to the `is-col` and `is-row` classes.
+
+> is-order-{number}-{breakpoint}
+
+```html
+<div class="is-grid">
+  <div class="is-order-2 is-order-1-md is-order-4-lg">
+    Column
+  </div>
+  ...
+</div>
+```
+
+In the case above, this grid (although the first in the DOM) will render as the second item for the xs and sm breakpoints, the first item for the md breakpoint, and the fourth item for the lg and xl breakpoints.
 
 ## Rows
 
