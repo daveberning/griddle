@@ -45,7 +45,7 @@ $maximum: 12;
       grid-template-#{$grid_direction}: repeat($i, 1fr);
       & > * { // Items without a .is-col class are 12 by default
         grid-column: span #{$i};
-        @media screen and (min-width: $md) { grid-column: span 1; }
+        @media screen and (min-width: $lg) { grid-column: span 1; }
       }
     }
     
@@ -125,7 +125,7 @@ $maximum: 12;
   
   & > * { // Items without a .is-col class are 12 by default
     grid-column: span #{$maximum};
-    @media screen and (min-width: $md) { grid-column: span 1; }
+    @media screen and (min-width: $lg) { grid-column: span 1; }
   }
   
   &.is-dense {
