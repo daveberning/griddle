@@ -10,7 +10,7 @@ you are familiar with how other CSS Frameworks work. At it's core, is CSS Grid. 
  becoming the new standard when creating UI layouts and grids. If you do not know, CSS Grid, no worries. You can
   start creating intrinsic layouts for all modern browsers with just a few classes.
   
- ![](https://img.shields.io/website?label=Documentation%20Site&style=for-the-badge&url=https%3A%2F%2Fgriddle.netlify.com%2F)
+ <!-- ![](https://img.shields.io/website?label=Documentation%20Site&style=for-the-badge&url=https%3A%2F%2Fgriddle.netlify.com%2F) -->
   ![](https://img.shields.io/twitter/follow/griddlecss?color=%23EB8A5E&style=for-the-badge)
   
 ![](https://img.shields.io/github/package-json/v/daveberning/griddle?color=eb8a5e&style=for-the-badge)
@@ -24,7 +24,7 @@ you are familiar with how other CSS Frameworks work. At it's core, is CSS Grid. 
 # Overview
 
 ## Columns
-With Griddle, you can create standard to complex grid layouts with just a few classes. All of Griddle's classes are prefixed with `.is-` or `.has-`. This is done for two reaosns. 1. For it to read like English and 2. for you to differentiate your classes and Griddle's.
+With Griddle, you can create standard to complex grid layouts with just a few classes. All of Griddle's classes are prefixed with `.is-` or `.has-`. This is done for two reasons. 1. For it to read like English and 2. for you to differentiate your classes and Griddle's.
   
 At a high level, Griddle consists of a grid, column, and rows. To create a grid, just add the `is-grid` class to any HTML node.
    
