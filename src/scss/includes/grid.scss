@@ -77,7 +77,7 @@ $maximum: 12;
 @mixin generate_direction($direction) {
   // Generate Direction Classes --- Ex: .is-rtl or .is-ltr
   @for $i from 1 through length($breakpoints) {
-    .is-#{$direction} { direction: rtl; }
+    .is-#{$direction} { direction: #{$direction}; }
     .is-#{$direction}-#{nth($breakpoints, $i)} {
       @media screen and (min-width: #{nth($breakpoint_values, $i)}) { direction: #{$direction}; }
     }
