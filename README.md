@@ -2,11 +2,6 @@
   <img width="500" src="src/griddle-logo.png" />
 </p>
 
-Griddle is a CSS framework created with CSS Grid and Flexbox. It's easy to get started with Griddle, especially if
-you are familiar with how other CSS Frameworks work. At it's core, is CSS Grid. The CSS specification that is quickly
- becoming the new standard when creating UI layouts and grids. If you do not know, CSS Grid, no worries. You can
-  start creating intrinsic layouts for all modern browsers with just a few classes.
-  
  <!-- ![](https://img.shields.io/website?label=Documentation%20Site&style=for-the-badge&url=https%3A%2F%2Fgriddle.netlify.com%2F) -->
   [![](https://img.shields.io/github/package-json/v/daveberning/griddle?color=eb8a5e&style=for-the-badge)](https://www.npmjs.com/package/@daveberning/griddle)
   [![](https://img.shields.io/npm/dm/@daveberning/griddle?style=for-the-badge)](https://www.npmjs.com/package/@daveberning/griddle)
@@ -16,6 +11,11 @@ you are familiar with how other CSS Frameworks work. At it's core, is CSS Grid. 
   [![](https://img.shields.io/static/v1?label=PRs&message=Welcome&color=success&style=for-the-badge)](https://github.com/daveberning/griddle/blob/master/CONTRIBUTING.md)
   [![](https://img.shields.io/twitter/follow/griddlecss?color=%23EB8A5E&style=for-the-badge)](https://twitter.com/griddlecss)
   [![NPM License](https://img.shields.io/npm/l/all-contributors.svg?style=for-the-badge)](https://github.com/daveberning/griddle/blob/master/LICENSE)
+
+Griddle is a CSS framework created with CSS Grid and Flexbox. It's easy to get started with Griddle, especially if
+you are familiar with how other CSS Frameworks work. At it's core, is CSS Grid. The CSS specification that is quickly
+ becoming the new standard when creating UI layouts and grids. If you do not know, CSS Grid, no worries. You can
+  start creating intrinsic layouts for all modern browsers with just a few classes.
  
 # Overview
 
