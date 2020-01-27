@@ -1,6 +1,3 @@
-# Griddle
-
-
 <p align="center">
   <img width="500" src="src/griddle-logo.png" />
 </p>
@@ -11,15 +8,14 @@ you are familiar with how other CSS Frameworks work. At it's core, is CSS Grid. 
   start creating intrinsic layouts for all modern browsers with just a few classes.
   
  <!-- ![](https://img.shields.io/website?label=Documentation%20Site&style=for-the-badge&url=https%3A%2F%2Fgriddle.netlify.com%2F) -->
-  ![](https://img.shields.io/twitter/follow/griddlecss?color=%23EB8A5E&style=for-the-badge)
-  
-![](https://img.shields.io/github/package-json/v/daveberning/griddle?color=eb8a5e&style=for-the-badge)
-![](https://img.shields.io/maintenance/yes/2020?style=for-the-badge)
-
-![](https://img.shields.io/github/size/daveberning/griddle/dist/main.css?label=Griddle&style=for-the-badge)
-![](https://img.shields.io/github/size/daveberning/griddle/dist/grid.css?label=Grid%20Only&style=for-the-badge)
-
- [![NPM License](https://img.shields.io/npm/l/all-contributors.svg?style=for-the-badge)]()
+  [![](https://img.shields.io/github/package-json/v/daveberning/griddle?color=eb8a5e&style=for-the-badge)](https://www.npmjs.com/package/@daveberning/griddle)
+  [![](https://img.shields.io/npm/dm/@daveberning/griddle?style=for-the-badge)](https://www.npmjs.com/package/@daveberning/griddle)
+  [![](https://img.shields.io/maintenance/yes/2020?style=for-the-badge)](https://github.com/daveberning)
+  [![](https://img.shields.io/github/size/daveberning/griddle/dist/main.css?label=Griddle&style=for-the-badge)](https://github.com/daveberning/griddle/blob/master/dist/main.css)
+  [![](https://img.shields.io/github/size/daveberning/griddle/dist/grid.css?label=Grid%20Only&style=for-the-badge)](https://github.com/daveberning/griddle/blob/master/dist/grid.css)
+  [![](https://img.shields.io/static/v1?label=PRs&message=Welcome&color=success&style=for-the-badge)](https://github.com/daveberning/griddle/blob/master/CONTRIBUTING.md)
+  [![](https://img.shields.io/twitter/follow/griddlecss?color=%23EB8A5E&style=for-the-badge)](https://twitter.com/griddlecss)
+  [![NPM License](https://img.shields.io/npm/l/all-contributors.svg?style=for-the-badge)](https://github.com/daveberning/griddle/blob/master/LICENSE)
  
 # Overview
 
