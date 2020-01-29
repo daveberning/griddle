@@ -317,7 +317,7 @@ or
 If you are _not_ using SCSS and would like to use Griddle with plan ol' CSS you can do that as well.
 
 ```html
-<link rel="stylesheet" href="node_modules/@daveberning/griddle/dist/main.css"
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@daveberning/griddle@0.2.2/dist/main.css" />
 ```
 
 If you do not want Griddle's theme, utility classes, or elements, no worries - we get it it. If you want to just use
@@ -333,10 +333,10 @@ or
  @import '@daveberning/griddle/dist/grid.css';
 ```
 
-or
+or you can download it via a CDN if you don't want to download Griddle via Yarn or NPM.
 
 ```html
-<link rel="stylesheet" href="node_modules/@daveberning/griddle/dist/grid.css"
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@daveberning/griddle@0.2.2/dist/grid.css" />
 ```
 
 # Contributing
