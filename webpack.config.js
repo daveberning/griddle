@@ -4,6 +4,7 @@ module.exports = {
   mode: process.env.NODE_ENV === 'production' ? 'production' : 'development',
   entry: [
     './src/scss/includes/grid.scss',
+    './src/scss/includes/grid-plus.scss',
     './src/scss/main.scss'
   ],
   output: {
