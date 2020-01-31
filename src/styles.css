@@ -1,27 +1,19 @@
-/* This is used for the demo only. This is not the source code
------------------------------------------------------------------------ */
-html {
+/*
+
+  This is used for the demo only. This is not the source code.
+  You may use this file to play around with Griddle when working on new features.
+  Please do not commit this file.
+
+-------------------------------------------------------------------------------------- */
+body {
+  padding: 1rem;
   font-family: 'Montserrat', sans-serif;
 }
 
 .is-grid {
-  padding: 1rem;
-  border: 2px solid #000;
-}
-
-.swatches {
-  border: none;
-}
-
-.swatches p {
-  color: white;
-}
-
-.item {
   background: #ccc;
 }
 
-.item .item {
-  background: #252525;
-  color: #fff;
+.is-grid > * {
+  background: #a8a8a8;
 }

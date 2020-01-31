@@ -18,10 +18,10 @@ $sizes: "" "-md" "-lg";
   $propertyFirstLetter: get_first_chars($property, 1);
   
   @each $size in $sizes {
-    .has-#{$propertyFirstLetter}#{$size} { #{$property}: variable("spacing#{size}"); }
+    .has-#{$propertyFirstLetter}#{$size} { #{$property}: variable("spacing#{$size}"); }
     @each $direction in $directions {
       .has-#{$propertyFirstLetter}#{$direction}#{$size} {
-        #{$property}#{$direction}: variable("spacing#{size}");
+        #{$property}#{$direction}: variable("spacing#{$size}");
       }
     }
   }
@@ -82,7 +82,7 @@ img {
   &.is-rounded { border-radius: 50%; }
 }
 
-@mixin generate-border-radius {
+@mixin generate_border_radius {
   @each $size in $sizes {
     .has-rounded-corners#{$size} {
       border-radius: variable('border-radius#{$size}');
@@ -147,4 +147,4 @@ img {
   }
 }
 
-@include generate-border-radius;
+@include generate_border_radius;
