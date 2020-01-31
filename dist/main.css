@@ -985,13 +985,13 @@ img.is-rounded {
 /* Light/Dark Mode
 ------------------------------------ s*/
 .has-rounded-corners {
-  border-radius: 0.25rem; }
+  border-radius: var(--border-radius); }
 
 .has-rounded-corners-md {
-  border-radius: 0.5rem; }
+  border-radius: var(--border-radius-md); }
 
 .has-rounded-corners-lg {
-  border-radius: 0.75rem; }
+  border-radius: var(--border-radius-lg); }
 
 button,
 a.is-button {

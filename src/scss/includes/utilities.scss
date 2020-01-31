@@ -1,3 +1,5 @@
+@import 'functions';
+
 /* Containers
 ------------------------------ */
 .has-container {
@@ -80,12 +82,10 @@ img {
 }
 
 @mixin generate-border-radius {
-  $radius: .25;
   @each $size in $sizes {
     .has-rounded-corners#{$size} {
-      border-radius: #{$radius}rem;
+      border-radius: variable('border-radius#{$size}');
     }
-    $radius: $radius + .25;
   }
 }
 
