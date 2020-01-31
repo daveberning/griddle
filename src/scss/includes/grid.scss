@@ -1,11 +1,6 @@
 @import '../variables';
 @import './../includes/functions';
 
-$directions: "top" "right" "bottom" "left";
-$sizes: "" "-md" "-lg";
-$properties: "left" "right" "center" "start" "normal";
-$maximum: 12;
-
 @mixin default_grid_flow {
   -ms-grid-rows: auto;
   grid-template-rows: auto;

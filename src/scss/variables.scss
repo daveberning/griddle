@@ -5,6 +5,11 @@ $lg: '992px';
 $xl: '1200px';
 $xxl: '1400px';
 
+$directions: "top" "right" "bottom" "left";
+$sizes: "" "-md" "-lg";
+$properties: "left" "right" "center" "start" "normal";
+$maximum: 12;
+
 /* Note:
 ** These must be in the same order
 ----------------------------------------- */

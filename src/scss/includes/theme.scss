@@ -10,7 +10,7 @@ body {
 }
 
 * {
-  color: darken(#016575, 12%); // Primary Color, cannot use native CSS variables in SCSS functions :/
+  color: variable('black');
   box-sizing: border-box;
 }
 

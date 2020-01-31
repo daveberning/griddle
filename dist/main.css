@@ -475,7 +475,7 @@ body {
   background: #f4f4f4; }
 
 * {
-  color: #003138;
+  color: var(--black);
   box-sizing: border-box; }
 
 p {
@@ -1351,8 +1351,13 @@ a.is-button {
     padding: 1.5rem 2rem;
     font-size: 1.25rem; }
 
+/* Note:
+** These must be in the same order
+----------------------------------------- */
+/* Needed for Loops - Add to this if you add color variables
+----------------------------------------------------------------- */
 .is-alert {
-  padding: 1rem; }
+  padding: var(--spacing); }
   .is-alert.is-primary {
     background: var(--primary);
     color: var(--white); }
@@ -1365,7 +1370,7 @@ a.is-button {
   border-radius: 10rem; }
 
 .is-alert {
-  padding: 1rem; }
+  padding: var(--spacing); }
   .is-alert.is-secondary {
     background: var(--secondary);
     color: var(--white); }
@@ -1378,7 +1383,7 @@ a.is-button {
   border-radius: 10rem; }
 
 .is-alert {
-  padding: 1rem; }
+  padding: var(--spacing); }
   .is-alert.is-tertiary {
     background: var(--tertiary);
     color: var(--white); }
@@ -1391,7 +1396,7 @@ a.is-button {
   border-radius: 10rem; }
 
 .is-alert {
-  padding: 1rem; }
+  padding: var(--spacing); }
   .is-alert.is-cta {
     background: var(--cta);
     color: var(--white); }
@@ -1404,7 +1409,7 @@ a.is-button {
   border-radius: 10rem; }
 
 .is-alert {
-  padding: 1rem; }
+  padding: var(--spacing); }
   .is-alert.is-white {
     background: var(--white);
     color: var(--white); }
@@ -1417,7 +1422,7 @@ a.is-button {
   border-radius: 10rem; }
 
 .is-alert {
-  padding: 1rem; }
+  padding: var(--spacing); }
   .is-alert.is-black {
     background: var(--black);
     color: var(--white); }
@@ -1430,7 +1435,7 @@ a.is-button {
   border-radius: 10rem; }
 
 .is-alert {
-  padding: 1rem; }
+  padding: var(--spacing); }
   .is-alert.is-grey {
     background: var(--grey);
     color: var(--white); }
@@ -1443,7 +1448,7 @@ a.is-button {
   border-radius: 10rem; }
 
 .is-alert {
-  padding: 1rem; }
+  padding: var(--spacing); }
   .is-alert.is-danger {
     background: var(--danger);
     color: var(--white); }
@@ -1456,7 +1461,7 @@ a.is-button {
   border-radius: 10rem; }
 
 .is-alert {
-  padding: 1rem; }
+  padding: var(--spacing); }
   .is-alert.is-warning {
     background: var(--warning);
     color: var(--white); }
@@ -1469,7 +1474,7 @@ a.is-button {
   border-radius: 10rem; }
 
 .is-alert {
-  padding: 1rem; }
+  padding: var(--spacing); }
   .is-alert.is-info {
     background: var(--info);
     color: var(--white); }
@@ -1482,7 +1487,7 @@ a.is-button {
   border-radius: 10rem; }
 
 .is-alert {
-  padding: 1rem; }
+  padding: var(--spacing); }
   .is-alert.is-success {
     background: var(--success);
     color: var(--white); }
