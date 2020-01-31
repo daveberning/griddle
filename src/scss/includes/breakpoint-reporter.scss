@@ -1,4 +1,4 @@
-@import 'breakpoints';
+@import '../variables';
 
 @mixin generate_breakpoint_reporter {
   body.has-breakpoint-tag:after {

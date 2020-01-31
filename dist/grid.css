@@ -1,6 +1,8 @@
 /* Note:
 ** These must be in the same order
 ----------------------------------------- */
+/* Needed for Loops - Add to this if you add color variables
+----------------------------------------------------------------- */
 /* Class Generation
 ------------------------- */
 /* Grid
@@ -14,8 +16,8 @@
   -ms-grid-columns: (1fr)[12];
   grid-template-columns: repeat(12, 1fr);
   direction: ltr;
-  grid-column-gap: 1rem;
-  grid-row-gap: 1rem; }
+  grid-column-gap: var(--col-gap);
+  grid-row-gap: var(--row-gap); }
   .is-grid > *,
   .is-grid-inline > * {
     -ms-grid-column-span: 12;
@@ -62,25 +64,25 @@
   display: inline-grid !important; }
 
 .has-row-gap {
-  grid-row-gap: variable("row-gap"); }
+  grid-row-gap: var(--spacing); }
 
 .has-row-gap-md {
-  grid-row-gap: variable("row-gap-md"); }
+  grid-row-gap: var(--spacing-md); }
 
 .has-row-gap-lg {
-  grid-row-gap: variable("row-gap-lg"); }
+  grid-row-gap: var(--spacing-lg); }
 
 .has-no-row-gap {
   grid-row-gap: 0; }
 
 .has-col-gap {
-  grid-column-gap: variable("col-gap"); }
+  grid-column-gap: var(--spacing); }
 
 .has-col-gap-md {
-  grid-column-gap: variable("col-gap-md"); }
+  grid-column-gap: var(--spacing-md); }
 
 .has-col-gap-lg {
-  grid-column-gap: variable("col-gap-lg"); }
+  grid-column-gap: var(--spacing-lg); }
 
 .has-no-col-gap {
   grid-column-gap: 0; }

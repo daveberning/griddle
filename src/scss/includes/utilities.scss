@@ -1,7 +1,7 @@
 /* Containers
 ------------------------------ */
 .has-container {
-  max-width: 1400px;
+  max-width: variable('container-width');
   width: 100%;
   margin: 0 auto;
 }
@@ -15,7 +15,7 @@ $sizes: "" "-md" "-lg";
   $propertyFirstLetter: get_first_chars($property, 1);
   
   @each $size in $sizes {
-    .has-#{$propertyFirstLetter}#{$size} { margin: variable("spacing#{size}"); }
+    .has-#{$propertyFirstLetter}#{$size} { #{$property}: variable("spacing#{size}"); }
     @each $direction in $directions {
       .has-#{$propertyFirstLetter}#{$direction}#{$size} {
         #{$property}#{$direction}: variable("spacing#{size}");

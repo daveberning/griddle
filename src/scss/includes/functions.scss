@@ -1,0 +1,7 @@
+@function get_first_chars($word, $number) {
+  @return str-slice($word, 0, $number);
+}
+
+@function variable($color-name) {
+  @return var(--#{$color-name});
+}

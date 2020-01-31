@@ -3,7 +3,7 @@
     .is-tag {
       padding: 0 .75rem;
       font-size: .8rem;
-      border-radius: 2px;
+      border-radius: .25rem;
     
       &.is-#{nth($all_colors, $i)} {
         background: variable(#{nth($all_colors, $i)});

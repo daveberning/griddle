@@ -1,13 +1,10 @@
-@import './../variables/breakpoints';
+@import '../variables';
+@import './../includes/functions';
 
 $directions: "top" "right" "bottom" "left";
 $sizes: "" "-md" "-lg";
 $properties: "left" "right" "center" "start" "normal";
 $maximum: 12;
-
-@function get_first_chars($word, $number) {
-  @return str-slice($word, 0, $number);
-}
 
 @mixin default_grid_flow {
   -ms-grid-rows: auto;
@@ -19,12 +16,13 @@ $maximum: 12;
 ------------------------- */
 @mixin grid_item_breakpoint_spans($name, $breakpoint, $spans, $grid_direction) {
   // is-{col|row}-{breakpoint}-{number} --- Ex: .is-col-6-lg
-  .is-#{get_first_chars($grid_direction, 3)}-#{$spans} {
+  $first_letters_of_direction: get_first_chars($grid_direction, 3);
+  .is-#{$first_letters_of_direction}-#{$spans} {
     grid-#{$grid_direction}: span #{$spans};
   }
   
   @media screen and (min-width: $breakpoint) {
-    .is-#{get_first_chars($grid_direction, 3)}-#{$spans}-#{$name} {
+    .is-#{$first_letters_of_direction}-#{$spans}-#{$name} {
       grid-#{$grid_direction}: span #{$spans} !important;
     }
   }
@@ -40,8 +38,10 @@ $maximum: 12;
 
 @mixin grid_has($grid_direction) {
   // Generate Grid Grid Template Classes --- Ex: .has-col-6 or .has-col-4-md
+  $first_letters_of_direction: get_first_chars($grid_direction, 3);
+  
   @for $i from 1 through $maximum {
-    .has-#{get_first_chars($grid_direction, 3)}-#{$i} {
+    .has-#{$first_letters_of_direction}-#{$i} {
       grid-template-#{$grid_direction}: repeat($i, 1fr);
       & > * { // Items without a .is-col class are 12 by default
         grid-column: span #{$i};
@@ -50,7 +50,7 @@ $maximum: 12;
     }
     
     @for $b from 1 through length($breakpoints) {
-      .has-#{get_first_chars($grid_direction, 3)}-#{$i}-#{nth($breakpoints, $b)} {
+      .has-#{$first_letters_of_direction}-#{$i}-#{nth($breakpoints, $b)} {
         & > * { // Items without a .is-col class are 12 by default
           grid-column: span #{$i};
           @media screen and (min-width: $lg) { grid-column: span 1; }
@@ -65,17 +65,19 @@ $maximum: 12;
 }
 
 @mixin generate_gap($grid_direction) {
-  // Generate Grid Gap Classes --- Ex: .has-col-gap-md (medium column gap)
+  // Generate Grid Gap Classes --- Ex: .has-col-gap-md (medium column gap
+  $first_letters_of_direction: get_first_chars($grid_direction, 3);
+  
   @each $size in $sizes {
     @each $direction in $grid_direction {
-      .has-#{get_first_chars($grid_direction, 3)}-gap#{$size} {
-        grid-#{$direction}-gap: variable("#{get_first_chars($grid_direction, 3)}-gap#{$size}");
+      .has-#{$first_letters_of_direction}-gap#{$size} {
+        grid-#{$direction}-gap: variable(#{'spacing#{$size}'});
       }
     }
   }
   
   // No Col/Row Gap Class --- Ex: .has-no-col-gap
-  .has-no-#{get_first_chars($grid_direction, 3)}-gap { grid-#{$grid_direction}-gap: 0; }
+  .has-no-#{$first_letters_of_direction}-gap { grid-#{$grid_direction}-gap: 0; }
 }
 
 @mixin generate_direction($direction) {
@@ -118,8 +120,8 @@ $maximum: 12;
   grid-template-rows: auto;
   grid-template-columns: repeat(#{$maximum}, 1fr); // 12 Column Grid By Default
   direction: ltr;
-  grid-column-gap: 1rem;
-  grid-row-gap: 1rem;
+  grid-column-gap: variable('col-gap');
+  grid-row-gap: variable('row-gap');
   
   & > * { // Items without a .is-col class are 12 by default
     grid-column: span #{$maximum};
