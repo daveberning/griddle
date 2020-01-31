@@ -6,13 +6,13 @@
       border-radius: 2px;
     
       &.is-#{nth($all_colors, $i)} {
-        background: color(#{nth($all_colors, $i)});
-        color: color("white");
+        background: variable(#{nth($all_colors, $i)});
+        color: variable("white");
       
         &.is-outline {
           background: none;
-          border: 2px solid color(#{nth($all_colors, $i)});
-          color: color(#{nth($all_colors, $i)});
+          border: 2px solid variable(#{nth($all_colors, $i)});
+          color: variable(#{nth($all_colors, $i)});
         }
       }
     }

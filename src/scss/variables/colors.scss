@@ -1,10 +1,9 @@
-/* Need for Loops
------------------------------------------ */
-$all_colors: "primary" "secondary" "tertiary" "cta" "white" "black" "grey" "danger" "warning" "info" "success";
+$all_colors: "primary" "secondary" "tertiary" "cta" "white" "black" "grey" "danger" "warning" "info" "success"; // Needed for Loops - Add to this if you add color variables
 
 /* CSS Variables
 ----------------------------------------- */
 :root {
+  // Colors
   --primary: #016575;
   --secondary: #03414b;
   --tertiary: #003242;
@@ -16,10 +15,37 @@ $all_colors: "primary" "secondary" "tertiary" "cta" "white" "black" "grey" "dang
   --warning: #FFDD57;
   --danger: #F14668;
   --info: #3298DC;
+  
+  // Typography
+  --h1: 4rem;
+  --h2: 3.5rem;
+  --h3: 3rem;
+  --h4: 2.5rem;
+  --h5: 2rem;
+  --h6: 1.5rem;
+  --root-font-size: 16px; /* REM values are based on this */
+  --root-line-height: 2rem;
+  
+  // Misc
+  --border-radius: .25rem;
+  --border-radius-md: .5rem;
+  --border-radius-lg: .75rem;
+  --spacing: 1rem;      // Used for .has-m and .has-p classes
+  --spacing-md: 1.5rem; // Used for .has-m-md and .has-p-md classes
+  --spacing-lg: 2rem;   // Used for .has-m-lg and .has-p-lg classes
+  
+  // Grid gaps
+  --col-gap: 1rem;
+  --col-gap-md: 1.5rem;
+  --col-gap-lg: 2rem;
+  
+  --row-gap: 1rem;
+  --row-gap-md: 1.5rem;
+  --row-gap-lg: 2rem;
 }
 
 /* Used to generate CSS Variables in SCSS
 ------------------------------------------------- */
-@function color($color-name) {
+@function variable($color-name) {
   @return var(--#{$color-name});
 }

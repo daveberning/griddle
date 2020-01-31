@@ -2,21 +2,19 @@
   @for $i from 1 through length($all_colors) {
     .has-text-#{nth($all_colors, $i)},
     .is-text-#{nth($all_colors, $i)} {
-      color: color(#{nth($all_colors, $i)});
+      color: variable(#{nth($all_colors, $i)});
     }
   }
 }
 
 @mixin generate_headings {
-  $size: 4;
   @for $i from 1 through 6 {
     h#{$i},
     .is-h#{$i} {
-      font-size: #{$size}rem;
-      line-height: #{$size + .5}rem;
+      font-size: variable("h#{$i}");
+      line-height: variable("h#{$i}");
       font-weight: 700;
     }
-    $size: $size - .5;
   }
 }
 

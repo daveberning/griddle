@@ -67,12 +67,10 @@ $maximum: 12;
 @mixin generate_gap($grid_direction) {
   // Generate Grid Gap Classes --- Ex: .has-col-gap-md (medium column gap)
   @each $size in $sizes {
-    $space: 1;
     @each $direction in $grid_direction {
       .has-#{get_first_chars($grid_direction, 3)}-gap#{$size} {
-        grid-#{$direction}-gap: #{$space}rem;
+        grid-#{$direction}-gap: variable("#{get_first_chars($grid_direction, 3)}-gap#{$size}");
       }
-      $space: $space + .5;
     }
   }
   

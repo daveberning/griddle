@@ -20,7 +20,7 @@
 .is-input,
 .is-textarea,
 .is-select-option {
-  background: color("grey");
+  background: variable("grey");
   padding: 1rem;
   border-radius: 2px;
   border: 0;

@@ -11,35 +11,21 @@
 $directions: "-top" "-right" "-bottom" "-left";
 $sizes: "" "-md" "-lg";
 
-@mixin generate_margin {
-  $space: 1;
-  .has-m { margin: #{$space}rem; }
+@mixin generate_spacing($property) {
+  $propertyFirstLetter: get_first_chars($property, 1);
+  
   @each $size in $sizes {
+    .has-#{$propertyFirstLetter}#{$size} { margin: variable("spacing#{size}"); }
     @each $direction in $directions {
-      .has-m#{$direction}#{$size} { margin#{$direction}: #{$space}rem; }
+      .has-#{$propertyFirstLetter}#{$direction}#{$size} {
+        #{$property}#{$direction}: variable("spacing#{size}");
+      }
     }
-    $space: $space + .5;
   }
   
-  .has-no-m { margin: 0; }
+  .has-no-#{$propertyFirstLetter} { margin: 0; } // Ex: has-no-p and has-no-m
   @each $direction in $directions {
-    .has-no#{$direction}-p { margin#{$direction}: 0; }
-  }
-}
-
-@mixin generate_padding {
-  $space: 1;
-  .has-p { padding: #{$space}rem; }
-  @each $size in $sizes {
-    @each $direction in $directions {
-      .has-p#{$direction}#{$size} { padding#{$direction}: #{$space}rem; }
-    }
-    $space: $space + .5;
-  }
-  
-  .has-no-p { padding: 0; }
-  @each $direction in $directions {
-    .has-no#{$direction}-p { padding#{$direction}: 0; }
+    .has-no#{$direction}-#{$propertyFirstLetter} { #{$property}#{$direction}: 0; } // Ex: has-no-top-p and has-no-top-m
   }
 }
 
@@ -57,8 +43,8 @@ $sizes: "" "-md" "-lg";
   }
 }
 
-@include generate_margin;
-@include generate_padding;
+@include generate_spacing('margin');
+@include generate_spacing('padding');
 
 /* Positioning
 ------------------------------ */
@@ -97,7 +83,7 @@ img {
   $radius: .25;
   @each $size in $sizes {
     .has-rounded-corners#{$size} {
-      border-radius: #{$radius}rem !important;
+      border-radius: #{$radius}rem;
     }
     $radius: $radius + .25;
   }
@@ -106,7 +92,7 @@ img {
 @mixin generate_background_colors {
   @for $i from 1 through length($all_colors) {
     .has-bkg-#{nth($all_colors, $i)} {
-      background: color(#{nth($all_colors, $i)});
+      background: variable(#{nth($all_colors, $i)});
     }
   }
 }
@@ -128,7 +114,7 @@ img {
 .is-box {
   padding: 1.5rem;
   border-radius: 2px;
-  border: 2px solid color("grey");
+  border: 2px solid variable("grey");
   
   &.has-shadow {
     border: none;

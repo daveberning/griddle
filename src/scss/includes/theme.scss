@@ -3,17 +3,17 @@
 /* General
 ----------------------------- */
 html {
-  font-size: 16px;
+  font-size: variable("root-font-size");
   font-family: 'Montserrat', sans-serif;
 }
 
 body {
-  line-height: 2rem;
+  line-height: variable("root-line-height");
   background: #f4f4f4;
 }
 
 * {
-  color: darken(#016575, 12%); // Primary Color
+  color: darken(#016575, 12%); // Primary Color, cannot use native CSS variables in SCSS functions :/
   box-sizing: border-box;
 }
 

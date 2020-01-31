@@ -1,19 +1,19 @@
 @mixin generate_tables {
   @for $i from 1 through length($all_colors) {
     .is-table.is-#{nth($all_colors, $i)} {
-      color: color(#{nth($all_colors, $i)});
+      color: variable(#{nth($all_colors, $i)});
       
       td,
       th {
         padding: .75rem 1rem;
-        border: 1px solid color(#{nth($all_colors, $i)});
+        border: 1px solid variable(#{nth($all_colors, $i)});
       }
   
       th {
-        background: color(#{nth($all_colors, $i)});
-        color: color("white");
-        border-left: 1px solid color(#{nth($all_colors, $i)});
-        border-right: 1px solid color(#{nth($all_colors, $i)});
+        background: variable(#{nth($all_colors, $i)});
+        color: variable("white");
+        border-left: 1px solid variable(#{nth($all_colors, $i)});
+        border-right: 1px solid variable(#{nth($all_colors, $i)});
       }
       
       tr th:first-child { border-left: none; }
@@ -23,16 +23,16 @@
 }
 
 .is-table {
-  border: 1px solid color("grey");
+  border: 1px solid variable("grey");
   
   td,
   th {
     padding: .75rem 1rem;
-    border: 1px solid color("grey");
+    border: 1px solid variable("grey");
   }
   
   th {
-    background: color("grey");
+    background: variable("grey");
   }
 }
 
