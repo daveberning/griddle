@@ -1,0 +1,61 @@
+@import '../variables';
+@import './../includes/functions';
+@import 'grid';
+
+/* Class Generation
+------------------------- */
+@mixin generate_gap($grid_direction) {
+  // Generate Grid Gap Classes --- Ex: .has-col-gap-md (medium column gap
+  $first_letters_of_direction: get_first_chars($grid_direction, 3);
+  
+  @each $size in $sizes {
+    @each $direction in $grid_direction {
+      .has-#{$first_letters_of_direction}-gap#{$size} {
+        grid-#{$direction}-gap: variable(#{'spacing#{$size}'});
+      }
+    }
+  }
+  
+  // No Col/Row Gap Class --- Ex: .has-no-col-gap
+  .has-no-#{$first_letters_of_direction}-gap { grid-#{$grid_direction}-gap: 0; }
+}
+
+@mixin generate_direction($direction) {
+  // Generate Direction Classes --- Ex: .is-rtl or .is-ltr
+  @for $i from 1 through length($breakpoints) {
+    .is-#{$direction} { direction: #{$direction}; }
+    .is-#{$direction}-#{nth($breakpoints, $i)} {
+      @media screen and (min-width: #{nth($breakpoint_values, $i)}) { direction: #{$direction}; }
+    }
+  }
+}
+
+@mixin generate_place_self() {
+  // Generate Place Self Classes --- Ex: .is-placed-left
+  @each $property in $properties {
+    .is-placed-#{$property} {
+      place-self: #{$property};
+    }
+  }
+}
+
+@mixin generate_order_classes($grid_direction) {
+  // Generate Order Classes --- Ex: is-order-2-lg
+  @for $i from 1 through $maximum {
+    .is-order-#{$i} { order: #{$i}; }
+    
+    @for $b from 1 through length($breakpoints) {
+      .is-order-#{$i}-#{nth($breakpoints, $b)} {
+        @media screen and (min-width: #{nth($breakpoint_values, $b)}) { order: #{$i} }
+      }
+    }
+  }
+}
+
+@include generate_gap("row");
+@include generate_gap("column");
+@include generate_direction("ltr");
+@include generate_direction("rtl");
+@include generate_place_self;
+@include generate_order_classes("row");
+@include generate_order_classes("column");
