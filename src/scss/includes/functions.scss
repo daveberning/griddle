@@ -2,6 +2,6 @@
   @return str-slice($word, 0, $number);
 }
 
-@function variable($color-name) {
-  @return var(--#{$color-name});
+@function variable($var_name) {
+  @return var(--#{$var_name});
 }

@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Montserrat:500,700,900&display=swap);/* -------------------------------------------
+/* -------------------------------------------
 
   Copyright 2020. All Rights Reserved.
   Name: Griddle
@@ -468,8 +468,7 @@ body.has-breakpoint-tag:after {
 /* General
 ----------------------------- */
 html {
-  font-size: var(--root-font-size);
-  font-family: 'Montserrat', sans-serif; }
+  font-size: var(--root-font-size); }
 
 body {
   line-height: var(--root-line-height);
@@ -588,6 +587,11 @@ h6,
 .is-aligned-right {
   text-align: right; }
 
+/* Note:
+** These must be in the same order
+----------------------------------------- */
+/* Needed for Loops - Add to this if you add color variables
+----------------------------------------------------------------- */
 /* Containers
 ------------------------------ */
 .has-container {
@@ -773,27 +777,27 @@ h6,
 
 @media screen and (min-width: 575.5px) {
   .is-inline-block-xs {
-    display: block; } }
+    display: inline-block; } }
 
 @media screen and (min-width: 576px) {
   .is-inline-block-sm {
-    display: block; } }
+    display: inline-block; } }
 
 @media screen and (min-width: 768px) {
   .is-inline-block-md {
-    display: block; } }
+    display: inline-block; } }
 
 @media screen and (min-width: 992px) {
   .is-inline-block-lg {
-    display: block; } }
+    display: inline-block; } }
 
 @media screen and (min-width: 1200px) {
   .is-inline-block-xl {
-    display: block; } }
+    display: inline-block; } }
 
 @media screen and (min-width: 1400px) {
   .is-inline-block-xxl {
-    display: block; } }
+    display: inline-block; } }
 
 .is-flex {
   display: -webkit-box;
@@ -801,27 +805,33 @@ h6,
 
 @media screen and (min-width: 575.5px) {
   .is-flex-xs {
-    display: block; } }
+    display: -webkit-box;
+    display: flex; } }
 
 @media screen and (min-width: 576px) {
   .is-flex-sm {
-    display: block; } }
+    display: -webkit-box;
+    display: flex; } }
 
 @media screen and (min-width: 768px) {
   .is-flex-md {
-    display: block; } }
+    display: -webkit-box;
+    display: flex; } }
 
 @media screen and (min-width: 992px) {
   .is-flex-lg {
-    display: block; } }
+    display: -webkit-box;
+    display: flex; } }
 
 @media screen and (min-width: 1200px) {
   .is-flex-xl {
-    display: block; } }
+    display: -webkit-box;
+    display: flex; } }
 
 @media screen and (min-width: 1400px) {
   .is-flex-xxl {
-    display: block; } }
+    display: -webkit-box;
+    display: flex; } }
 
 .is-inline-flex {
   display: -webkit-inline-box;
@@ -829,27 +839,33 @@ h6,
 
 @media screen and (min-width: 575.5px) {
   .is-inline-flex-xs {
-    display: block; } }
+    display: -webkit-inline-box;
+    display: inline-flex; } }
 
 @media screen and (min-width: 576px) {
   .is-inline-flex-sm {
-    display: block; } }
+    display: -webkit-inline-box;
+    display: inline-flex; } }
 
 @media screen and (min-width: 768px) {
   .is-inline-flex-md {
-    display: block; } }
+    display: -webkit-inline-box;
+    display: inline-flex; } }
 
 @media screen and (min-width: 992px) {
   .is-inline-flex-lg {
-    display: block; } }
+    display: -webkit-inline-box;
+    display: inline-flex; } }
 
 @media screen and (min-width: 1200px) {
   .is-inline-flex-xl {
-    display: block; } }
+    display: -webkit-inline-box;
+    display: inline-flex; } }
 
 @media screen and (min-width: 1400px) {
   .is-inline-flex-xxl {
-    display: block; } }
+    display: -webkit-inline-box;
+    display: inline-flex; } }
 
 .is-grid {
   display: -ms-grid;
@@ -857,27 +873,33 @@ h6,
 
 @media screen and (min-width: 575.5px) {
   .is-grid-xs {
-    display: block; } }
+    display: -ms-grid;
+    display: grid; } }
 
 @media screen and (min-width: 576px) {
   .is-grid-sm {
-    display: block; } }
+    display: -ms-grid;
+    display: grid; } }
 
 @media screen and (min-width: 768px) {
   .is-grid-md {
-    display: block; } }
+    display: -ms-grid;
+    display: grid; } }
 
 @media screen and (min-width: 992px) {
   .is-grid-lg {
-    display: block; } }
+    display: -ms-grid;
+    display: grid; } }
 
 @media screen and (min-width: 1200px) {
   .is-grid-xl {
-    display: block; } }
+    display: -ms-grid;
+    display: grid; } }
 
 @media screen and (min-width: 1400px) {
   .is-grid-xxl {
-    display: block; } }
+    display: -ms-grid;
+    display: grid; } }
 
 .is-inline-grid {
   display: -ms-inline-grid;
@@ -885,27 +907,33 @@ h6,
 
 @media screen and (min-width: 575.5px) {
   .is-inline-grid-xs {
-    display: block; } }
+    display: -ms-inline-grid;
+    display: inline-grid; } }
 
 @media screen and (min-width: 576px) {
   .is-inline-grid-sm {
-    display: block; } }
+    display: -ms-inline-grid;
+    display: inline-grid; } }
 
 @media screen and (min-width: 768px) {
   .is-inline-grid-md {
-    display: block; } }
+    display: -ms-inline-grid;
+    display: inline-grid; } }
 
 @media screen and (min-width: 992px) {
   .is-inline-grid-lg {
-    display: block; } }
+    display: -ms-inline-grid;
+    display: inline-grid; } }
 
 @media screen and (min-width: 1200px) {
   .is-inline-grid-xl {
-    display: block; } }
+    display: -ms-inline-grid;
+    display: inline-grid; } }
 
 @media screen and (min-width: 1400px) {
   .is-inline-grid-xxl {
-    display: block; } }
+    display: -ms-inline-grid;
+    display: inline-grid; } }
 
 /* Images
 ------------------------------ */
@@ -969,7 +997,7 @@ img.is-rounded {
     box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.02); }
 
 /* Display Helpers
------------------------------------- s*/
+------------------------------------ */
 .is-device {
   display: none; }
 
@@ -983,7 +1011,7 @@ img.is-rounded {
     display: none; } }
 
 /* Light/Dark Mode
------------------------------------- s*/
+------------------------------------ */
 .has-rounded-corners {
   border-radius: var(--border-radius); }
 

@@ -1,5 +1,9 @@
 /* This is used for the demo only. This is not the source code
 ----------------------------------------------------------------------- */
+html {
+  font-family: 'Montserrat', sans-serif;
+}
+
 .is-grid {
   padding: 1rem;
   border: 2px solid #000;
