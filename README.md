@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="500" src="https://github.com/daveberning/griddle/blob/master/src/griddle-logo.png" />
+  <img width="500" src="https://raw.githubusercontent.com/daveberning/griddle/master/src/griddle-logo.png" />
 </p>
 
  <!-- ![](https://img.shields.io/website?label=Documentation%20Site&style=for-the-badge&url=https%3A%2F%2Fgriddle.netlify.com%2F) -->
