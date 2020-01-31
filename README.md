@@ -432,12 +432,6 @@ or
 ```scss
 @import '@daveberning/griddle;
 ```
- 
-If you are _not_ using SCSS and would like to use Griddle with plan ol' CSS you can do that as well.
-
-```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@daveberning/griddle@0.2.2/dist/main.css" />
-```
 
 If you do not want Griddle's theme, utility classes, or elements, no worries - we get it. If you want to just use just the grid, import that, it's located in the `dist` directory.
  
@@ -454,7 +448,7 @@ or
 or you can download it via a CDN if you don't want to download Griddle via Yarn or NPM.
 
 ```html
-<link rel="stylesheet" href="<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@daveberning/griddle@<version>/dist/grid.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@daveberning/griddle@<version>/dist/grid.css" />
 ```
 
 # Contributing
