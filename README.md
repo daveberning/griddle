@@ -293,7 +293,7 @@ Feel free to add any modifiers to this to create different styled buttons.
 <button class="is-button is-cta is-rounded is-outline">Send Message</button>
 ```
 
-# Modifers
+# Modifiers
 These are classes that you can tack on to just about anything to add additional styles. These are typically agnostic to the HTML element it's attached to.
 
 ## Spacing Modifiers
@@ -329,7 +329,7 @@ We've also included helper classes to hide and show elements on touch screen dev
 `is-device`: Shows an element on a touch screen device
 `is-screen`: Shows an element on a non-touch screen device
 
-## Color Modifers
+## Color Modifiers
 We've touched on this briefly in other sections. But there are modifier classes for each color type (ex: primary) for text and backgrounds.
 
 `is-text-{type}`: Changes the color of the text per the type's value
