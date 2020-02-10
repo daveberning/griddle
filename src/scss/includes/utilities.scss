@@ -17,18 +17,18 @@ $sizes: "" "-md" "-lg";
 @mixin generate_spacing($property) {
   $propertyFirstLetter: get_first_chars($property, 1);
   
-  @each $size in $sizes {
-    .has-#{$propertyFirstLetter}#{$size} { #{$property}: variable("spacing#{$size}"); }
-    @each $direction in $directions {
-      .has-#{$propertyFirstLetter}#{$direction}#{$size} {
-        #{$property}#{$direction}: variable("spacing#{$size}");
-      }
-    }
+  .has-no-#{$propertyFirstLetter} { margin: 0 !important; } // Ex: has-no-p and has-no-m
+  @each $direction in $directions {
+    .has-no#{$direction}-#{$propertyFirstLetter} { #{$property}#{$direction}: 0 !important; } // Ex: has-no-top-p and has-no-top-m
   }
   
-  .has-no-#{$propertyFirstLetter} { margin: 0; } // Ex: has-no-p and has-no-m
-  @each $direction in $directions {
-    .has-no#{$direction}-#{$propertyFirstLetter} { #{$property}#{$direction}: 0; } // Ex: has-no-top-p and has-no-top-m
+  @each $size in $sizes {
+    .has-#{$propertyFirstLetter}#{$size} { #{$property}: variable("spacing#{$size}") !important; }
+    @each $direction in $directions {
+      .has-#{$propertyFirstLetter}#{$direction}#{$size} {
+        #{$property}#{$direction}: variable("spacing#{$size}") !important;
+      }
+    }
   }
 }
 

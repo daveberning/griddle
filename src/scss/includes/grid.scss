@@ -4,7 +4,7 @@
 @mixin default_grid_flow {
   -ms-grid-rows: auto;
   grid-template-rows: auto;
-  grid-template-columns: repeat(#{$maximum}, 1fr); // 12 Column Grid By Default
+  grid-template-columns: repeat(#{$maximum} auto-fill, 1fr); // 12 Column Grid By Default
 }
 
 /* Class Generation
@@ -12,13 +12,22 @@
 @mixin grid_item_breakpoint_spans($name, $breakpoint, $spans, $grid_direction) {
   // is-{col|row}-{breakpoint}-{number} --- Ex: .is-col-6-lg
   $first_letters_of_direction: get_first_chars($grid_direction, 3);
+  
   .is-#{$first_letters_of_direction}-#{$spans} {
     grid-#{$grid_direction}: span #{$spans};
+  }
+  
+  .is-pushed-#{$spans} { // Can be used to "push" a column
+    grid-column-start: #{$spans};
   }
   
   @media screen and (min-width: $breakpoint) {
     .is-#{$first_letters_of_direction}-#{$spans}-#{$name} {
       grid-#{$grid_direction}: span #{$spans} !important;
+    }
+  
+    .is-pushed-#{$spans}-#{$name} {
+      grid-column-start: #{$spans};
     }
   }
 }
