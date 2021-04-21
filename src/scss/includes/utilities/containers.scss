@@ -1,0 +1,7 @@
+@import '../functions';
+
+.has-container {
+    max-width: variable('container-width');
+    width: 100%;
+    margin: 0 auto;
+}

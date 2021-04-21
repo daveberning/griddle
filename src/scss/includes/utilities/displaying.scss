@@ -1,0 +1,17 @@
+@import '../../variables';
+
+@mixin generate_display_classes {
+    $display_types: "block" "inline-block" "flex" "inline-flex" "grid" "inline-grid";
+    
+    @each $type in $display_types {
+      .is-#{$type} { display: #{$type}; }
+      
+      @for $i from 1 through length($breakpoints) {
+        .is-#{$type}-#{nth($breakpoints, $i)} {
+          @media screen and (min-width: #{nth($breakpoint_values, $i)}) { display: #{$type}; }
+        }
+      }
+    }
+  }
+  
+@include generate_display_classes;

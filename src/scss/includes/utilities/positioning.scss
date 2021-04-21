@@ -1,0 +1,15 @@
+.is-centered {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.is-centered-horizontally {
+    display: flex;
+    justify-content: center;
+}
+
+.is-centered-vertically {
+    display: flex;
+    align-items: center;
+}

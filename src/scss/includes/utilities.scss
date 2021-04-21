@@ -1,75 +1,10 @@
 @import 'functions';
 @import '../variables';
 
-/* Containers
------------------------------- */
-.has-container {
-  max-width: variable('container-width');
-  width: 100%;
-  margin: 0 auto;
-}
-
-/* Spacing
------------------------------- */
-$directions: "-top" "-right" "-bottom" "-left";
-$sizes: "" "-md" "-lg";
-
-@mixin generate_spacing($property) {
-  $propertyFirstLetter: get_first_chars($property, 1);
-  
-  @each $size in $sizes {
-    .has-#{$propertyFirstLetter}#{$size} { #{$property}: variable("spacing#{$size}"); }
-    @each $direction in $directions {
-      .has-#{$propertyFirstLetter}#{$direction}#{$size} {
-        #{$property}#{$direction}: variable("spacing#{$size}");
-      }
-    }
-  }
-  
-  .has-no-#{$propertyFirstLetter} { margin: 0; } // Ex: has-no-p and has-no-m
-  @each $direction in $directions {
-    .has-no#{$direction}-#{$propertyFirstLetter} { #{$property}#{$direction}: 0; } // Ex: has-no-top-p and has-no-top-m
-  }
-}
-
-@mixin generate_display_classes {
-  $display_types: "block" "inline-block" "flex" "inline-flex" "grid" "inline-grid";
-  
-  @each $type in $display_types {
-    .is-#{$type} { display: #{$type}; }
-    
-    @for $i from 1 through length($breakpoints) {
-      .is-#{$type}-#{nth($breakpoints, $i)} {
-        @media screen and (min-width: #{nth($breakpoint_values, $i)}) { display: #{$type}; }
-      }
-    }
-  }
-}
-
-@include generate_spacing('margin');
-@include generate_spacing('padding');
-
-/* Positioning
------------------------------- */
-.is-centered {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.is-centered-horizontally {
-  display: flex;
-  justify-content: center;
-}
-
-.is-centered-vertically {
-  display: flex;
-  align-items: center;
-}
-
-/* Display
------------------------------- */
-@include generate_display_classes;
+@import 'utilities/containers';
+@import 'utilities/spacing';
+@import 'utilities/positioning';
+@import 'utilities/displaying';
 
 /* Images
 ------------------------------ */
